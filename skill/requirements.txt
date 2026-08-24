@@ -1,0 +1,13 @@
+# Graham NCAV 折价因子技能 —— Python 依赖
+# 安装：pip install -r requirements.txt
+#
+# 说明：
+#   - panda_data 为 PandaAI 量化数据平台官方 SDK，提供行情/财务/审计等接口。
+#     实地验证基线版本 v0.0.9（详见 review_graham_panda_sdk_factcheck_20260714.md）。
+#   - 其余为数据处理与 Parquet 读写依赖。
+#   - 版本以“已验证的最低可用版本”为下限，便于在较新环境中安装。
+
+panda_data>=0.0.9
+pandas>=1.5
+numpy>=1.23
+pyarrow>=10.0
