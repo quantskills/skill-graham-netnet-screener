@@ -1,5 +1,5 @@
 ---
-name: alpha-ncav-graham
+name: graham-netnet-screener
 description: 当需要开发、计算、验证 Graham 净净营运资本(NCAV) 因子时，使用此 skill。适用于 A 股全市场深度价值筛选，排除银行/房地产/非银金融，计算 NCAV 折价因子并生成 buy/sell/hold 信号。
 tags: [quant, alpha, development, stock]
 ---
