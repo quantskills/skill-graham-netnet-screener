@@ -176,3 +176,7 @@ python scripts/backtest.py --period 20
 4. **PandaAI data 数据源确认**：所有数据来自 panda_data SDK，无来源不明数据
 5. **Parquet 质量检查通过**：主键唯一、字段完整、score 范围 0-100、signal 枚举正确
 6. **验证脚本输出 PASS**：validate.py 所有检测项输出 ✅ PASS
+
+## Pandadata compatibility
+
+[Pandadata 1.0.6 compatibility](references/pandadata-compatibility.md) — exact SDK baseline, validation scope, and shared guidance for all supported agent runtimes.

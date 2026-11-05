@@ -70,7 +70,7 @@ df = panda_data.get_industry_constituents()
 **调用**：
 ```python
 data = panda_data.get_stock_daily(
-    symbols=["000001.SZ", "000002.SZ", ...],
+    symbol=["000001.SZ", "000002.SZ", ...],
     start_date="20250101",
     end_date="20250430",
 )
@@ -122,20 +122,14 @@ df = table.to_pandas()
 
 **预期调用**：
 ```python
-# 函数名需确认
-bs = panda_data.get_balance_sheet(
-    ts_codes=["000001.SZ", ...],
-    as_of_date="20250430",  # SDK 内部处理披露时点对齐
-    fields=[
-        "ts_code", "report_date",
-        "total_current_assets",     # 流动资产合计
-        "total_liabilities",        # 负债合计
-        "minority_interest",        # 少数股东权益
-        "preferred_stock",          # 优先股（A股极少）
-        "total_shares",             # 总股本
-        "total_equity",             # 净资产（股东权益合计）
-    ]
+import panda_data
+# Initialize the SDK in this process before making the request.
+reports = panda_data.get_fina_reports(
+    symbol=["000001.SZ"], start_quarter="2024q1", end_quarter="2024q4",
+    date="20250430", is_latest=False, fields=[],
 )
+print(reports.head())
+# Select balance-sheet, income or cash-flow columns from the actual response.
 ```
 
 **NCAV 字段映射**：
@@ -153,12 +147,14 @@ bs = panda_data.get_balance_sheet(
 
 **预期调用**：
 ```python
-# 函数名需确认
-income = panda_data.get_income_statement(
-    ts_codes=["000001.SZ", ...],
-    years=5,  # 近5年
-    fields=["ts_code", "report_date", "net_profit"]
+import panda_data
+# Initialize the SDK in this process before making the request.
+reports = panda_data.get_fina_reports(
+    symbol=["000001.SZ"], start_quarter="2024q1", end_quarter="2024q4",
+    date="20250430", is_latest=False, fields=[],
 )
+print(reports.head())
+# Select balance-sheet, income or cash-flow columns from the actual response.
 ```
 
 | 字段 | 说明 | 用途 |
@@ -169,12 +165,14 @@ income = panda_data.get_income_statement(
 
 **预期调用**：
 ```python
-# 函数名需确认
-cf = panda_data.get_cashflow_statement(
-    ts_codes=["000001.SZ", ...],
-    years=3,
-    fields=["ts_code", "report_date", "net_cashflow_from_operations"]
+import panda_data
+# Initialize the SDK in this process before making the request.
+reports = panda_data.get_fina_reports(
+    symbol=["000001.SZ"], start_quarter="2024q1", end_quarter="2024q4",
+    date="20250430", is_latest=False, fields=[],
 )
+print(reports.head())
+# Select balance-sheet, income or cash-flow columns from the actual response.
 ```
 
 | 字段 | 说明 | 用途 |

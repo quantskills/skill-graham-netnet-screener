@@ -82,5 +82,8 @@ python scripts/backtest.py --period 20
 ## 依赖 / Dependencies
 
 - Python 3.x
-- panda_data >= 0.0.9
+- panda_data==1.0.6
 - pandas, numpy, pyarrow
+
+
+Pandadata 兼容维护：[abgyjaguo](https://github.com/abgyjaguo)，保留原项目作者署名。
